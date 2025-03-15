@@ -53,11 +53,11 @@ const TeamJumbotron: React.FC = () => {
   return (
     <div className="flex h-screen w-full text-white">
       {/* Red Team */}
-      <div className="flex flex-1 flex-col items-center justify-center text-red-600 p-8">
-        <h2 className="mb-4 text-4xl font-bold md:text-6xl lg:text-8xl">
+      <div className="flex flex-1 flex-col items-center justify-center text-red-600">
+        <h2 className="text-[4rem] font-bold ">
           {redTeam.name}
         </h2>
-        <p className="mb-8 text-6xl font-bold md:text-8xl lg:text-[450px]">
+        <p className="m-0 p-0 text-[14rem] font-bold leading-none ">
           {redTeam.score}
         </p>
       </div>
@@ -70,11 +70,11 @@ const TeamJumbotron: React.FC = () => {
       <div className="w-[5px] bg-black"></div>
 
       {/* Blue Team */}
-      <div className="flex flex-1 flex-col items-center justify-center text-blue-600 p-8">
-        <h2 className="mb-4 text-4xl font-bold md:text-6xl lg:text-8xl">
+      <div className="flex flex-1 flex-col items-center justify-center text-blue-600 ">
+        <h2 className=" text-[4rem] font-bold ">
           {blueTeam.name}
         </h2>
-        <p className="mb-8 text-6xl font-bold md:text-8xl lg:text-[450px]">
+        <p className="m-0 p-0 text-[14rem] font-bold leading-none">
           {blueTeam.score}
         </p>
       </div>
