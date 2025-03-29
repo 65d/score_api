@@ -47,7 +47,7 @@ const TeamJumbotron: React.FC = () => {
   const blueTeam = teams.find((team) => team.color === "blue");
 
   if (!redTeam || !blueTeam) {
-    return <div>Loading...</div>;
+    return <div className="flex h-screen w-full items-center justify-center text-white">Initializing...</div>;
   }
 
   return (
