@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import { AnimatedNumber } from "@/app/components/animated-number";
 
 type Team = {
   id: string;
@@ -47,36 +49,32 @@ const TeamJumbotron: React.FC = () => {
   const blueTeam = teams.find((team) => team.color === "blue");
 
   if (!redTeam || !blueTeam) {
-    return <div className="flex h-screen w-full items-center justify-center text-white">Initializing...</div>;
+    return (
+      <div className="flex h-screen w-full items-center justify-center text-white">
+        Initializing...
+      </div>
+    );
   }
 
   return (
     <div className="flex h-screen w-full text-white">
       {/* Red Team */}
       <div className="flex flex-1 flex-col items-center justify-center text-red-600">
-        <h2 className="text-[4rem] font-bold ">
-          {redTeam.name}
-        </h2>
-        <p className="m-0 p-0 text-[14rem] font-bold leading-none ">
-          {redTeam.score}
-        </p>
+        <h2 className="text-[4rem] font-bold">{redTeam.name}</h2>
+        <div className="m-0 p-0 text-[14rem] font-bold leading-none">
+          <AnimatedNumber value={redTeam.score} />
+        </div>
       </div>
 
-      {/* Center Divider with Clock */}
-      {/* <div className="flex w-1/6 flex-col items-center justify-center bg-gray-800">
-        <div className="mb-4 text-2xl font-bold md:text-4xl lg:text-6xl">{currentTime}</div>
-        <div className="h-1/2 w-1 bg-white"></div>
-      </div> */}
+      {/* Center Divider */}
       <div className="w-[5px] bg-black"></div>
 
       {/* Blue Team */}
-      <div className="flex flex-1 flex-col items-center justify-center text-blue-600 ">
-        <h2 className=" text-[4rem] font-bold ">
-          {blueTeam.name}
-        </h2>
-        <p className="m-0 p-0 text-[14rem] font-bold leading-none">
-          {blueTeam.score}
-        </p>
+      <div className="flex flex-1 flex-col items-center justify-center text-blue-600">
+        <h2 className="text-[4rem] font-bold">{blueTeam.name}</h2>
+        <div className="m-0 p-0 text-[14rem] font-bold leading-none">
+          <AnimatedNumber value={blueTeam.score} />
+        </div>
       </div>
     </div>
   );

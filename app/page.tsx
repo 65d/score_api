@@ -1,4 +1,4 @@
-import TeamJumbotron from './components/TeamJumbotron'
+import TeamJumbotron from './components/team-jumbotron'
 
 export default function Home() {
   return (

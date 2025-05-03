@@ -70,3 +70,63 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes slideDownIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideUpIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-down-in {
+  animation: slideDownIn 500ms ease forwards;
+}
+
+.animate-slide-down-out {
+  animation: slideDownOut 500ms ease forwards;
+}
+
+.animate-slide-up-in {
+  animation: slideUpIn 500ms ease forwards;
+}
+
+.animate-slide-up-out {
+  animation: slideUpOut 500ms ease forwards;
+}
