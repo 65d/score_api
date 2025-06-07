@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import React from "react";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -51,6 +52,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+  <title>My App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="My App" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+</Head>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
